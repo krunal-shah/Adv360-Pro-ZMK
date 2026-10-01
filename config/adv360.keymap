@@ -105,6 +105,48 @@
             bindings = <&kp LS(TAB)>, <&kp LS(TAB)>;
             mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT)>;
         };
+
+        hyp_lbkt: hyp_lbkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LBKT>, <&kp LBKT>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT)>;
+        };
+
+        hyp_rbkt: hyp_rbkt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp RBKT>, <&kp RBKT>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT)>;
+        };
+
+        hyp_lbrc: hyp_lbrc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LBKT)>, <&kp LS(LBKT)>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT)>;
+        };
+
+        hyp_rbrc: hyp_rbrc {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp LS(RBKT)>, <&kp LS(RBKT)>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT)>;
+        };
+
+        hyp_semi: hyp_semi {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SEMI>, <&kp SEMI>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT)>;
+        };
+
+        hyp_sqt: hyp_sqt {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp SQT>;
+            mods = <(MOD_LSFT|MOD_LCTL|MOD_LALT)>;
+        };
     };
 
     keymap {
@@ -169,9 +211,9 @@
             display-name = "HyperL";
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans  &trans                                                &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans            &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                            &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans                                                &trans  &trans  &hyp_lbrc  &hyp_rbrc  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans            &trans  &trans  &hyp_lbkt  &hyp_rbkt  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans                  &trans      &trans                            &trans  &hyp_semi  &hyp_sqt  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans      &trans  &hyp_enter  &hyp_space    &hyp_up  &hyp_down  &trans  &trans  &trans
             >;
         };
